@@ -46,12 +46,32 @@
             /* 居中 盒子必须有宽度 */
             margin: 10px auto;
         }
+
+        span {
+            color: #FFF;
+            margin: 10px 10px;
+            padding: 10px;
+            line-height: 300px;
+            background-color: blue;
+        }
+        .shadow {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px;
+            /* X Y 模糊半径 扩散半径 颜色 内外阴影 */
+            box-shadow: 2px 2px gray;
+        }
     </style>
 </head>
 <body>
     <div>
         阿旭爱学习
     </div>
+
+    <span>
+        span padding 和margin 水平生效，垂直不生效，垂直用 行高
+    </span>
 
     <div class="border1">
         边框线1 
@@ -61,9 +81,16 @@
         padding
     </div>
 
+    <div class="shadow">
+        shadow
+    </div>
+
     <div class="marginDiv">
         margin 居中
     </div>
+
+
+
 
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .keyWords {
+            color: brown;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding:  20px; 
+            /* 自动内减 border + padding */
+            box-sizing: border-box;
+            /* hidden 超出隐藏 scroll 滚动条 auto 垂直有，水平没有， 内容不超出时 auto 没有，scroll 一定有*/
+            overflow: auto ; 
+        }
+
+        .marginOne {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+        .marginTwo {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 内容溢出 -->
+    <p >作用：控制<p class="keyWords" style="display: inline-block;">溢出 </p>元素的内容的<p class="keyWords" p class="keyWords" style="display: inline-block;">显示方式</p></p>
+    <div> 阿旭的网站阿旭的网站阿旭的网站阿旭的网站阿旭的网站</div>
+    <!-- margin冲突 -->
+    <p> 当 两个盒子 上下排列是，如果margin冲突，取较大的间距</p>
+    <div class="marginOne">阿旭的网站 </div>
+
+    <div class="marginTwo">阿旭的网站 </div>
+    <!-- 外边距塌陷  -->
+    <p>父子级标签，子集级的添加上外边距会产生塌陷问题</p>
+
+</body>
+</html>
