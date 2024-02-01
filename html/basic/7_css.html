@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/1_normal.css" />
+    <link rel="stylesheet" href="../css/2_类名选择器.css" />
+    <link rel="stylesheet" href="../css/3_ID选择器.css">
+    <link rel="stylesheet" href="../css/4_通配符选择器.css">
+    <!-- 就近原则 -->
+    <!-- <style>
+      p {
+        color: #7deb16fb;
+        font-size: 30px; 
+      }
+    </style> -->
+  </head>
+  <body>
+    <h1>标签选择器</h1>
+    <p>我在学CSS &nbsp;</p>
+    <div>这是一个小盒子</div>
+    <!-- 行内样式 优先于标签样式 -->
+    <span style="color: blue; font: 1em sans-serif">这是一个大盒子</span>
+
+    <br />
+    <h1>类选择器</h1>
+    <!-- 行内样式 优先于类选择器 优先于标签选择器  -->
+    <p class="pclass size" style="color: blue">我在学CSS &nbsp;</p>
+    <!-- 多类名  -->
+    <div class="dclass size">这是一个小盒子</div>
+    <span class="sclass">这是一个大盒子</span>
+        
+    <br />
+    <h1>Id选择器</h1>
+      <!-- 行内样式 优先于Id选择器  优先于类选择器 优先于标签选择器  -->
+    <p class="pclass" id="pId" >我在学CSS &nbsp;</p>
+    <div>这是一个小盒子</div>
+    <!-- 行内样式 优先于标签样式 -->
+    <span style="color: blue; font: 1em sans-serif">这是一个大盒子</span>
+
+    <br />
+    <h1>通配符选择器</h1>
+    <p> 清除标签默认选择项，因为标签自带间距等问题     </p>
+  </body>
+</html>

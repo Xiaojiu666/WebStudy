@@ -1,0 +1,12 @@
+.textStyle {
+    font-size: 30px;
+    font-weight: 100;
+    font-style: italic;
+    line-height: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    font: 100;
+    text-indent: 20px;
+    text-align: right;
+    text-decoration: double;
+    color: #000;
+}

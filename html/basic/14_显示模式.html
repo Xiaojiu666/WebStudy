@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+        }
+        .div1 {
+            background: #df3838;
+        }
+        .div2 {
+            background: #25ad19;
+        }
+
+        span {
+            height: 100px;
+            width: 100px; 
+        }
+        .span1 {
+            background: #df3838;
+        }
+        .span2 {
+            background: #25ad19;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>块级元素</h3> 
+    <p> 独占一行 默认尺寸 是父宽度100% 添加宽高属性，会生效</p>
+    <div class="div1"> div 标签</div>
+    <div class="div2"> div 标签</div>
+
+    <h3>行内元素</h3>
+    <p> 一行占多个 默认尺寸包裹内容 添加宽高属性无效</p>
+    <span class="span1"> div 标签</span>
+    <span class="span2"> div 标签</span  >
+     <!-- 行内块   不换行  默认尺寸包裹内容 添加宽高生效    -->
+    <img src="../images/cat.webp" alt="">
+    <img src="../images/cat.webp" alt="">
+
+    <h2>转换显示模式</h2>
+    <p>属性名 <P style="color: #df3838;">display： block ,inline-block , inline   </P></p>
+
+</body>
+</html> 

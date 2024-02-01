@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 盒子模型</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* 内边距 */
+            padding: 100px;
+            /* 外边距 */
+            margin: 50px;
+
+            /* solid 实线 dashed 虚线 dotted 点线 */
+            border: 10px #000 solid;
+
+        }
+        .border1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* solid 实线 dashed 虚线 dotted 点线 */
+            border-bottom: 10px #000 solid;
+            border-left: 5px blue dotted;
+        }
+        .paddingDiv{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /* solid 实线 dashed 虚线 dotted 点线 */ 
+            /* 上 右 下 左 */
+            padding: 10px 20px 30px 40px;
+            /* 上 左右 下  */
+            padding: 10px 20px 30px;
+            /* 上下 左右   */
+            padding: 10px 20px;
+        }
+        .marginDiv{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /* auto = 自动匹配父控件 */
+            /* 居中 盒子必须有宽度 */
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        阿旭爱学习
+    </div>
+
+    <div class="border1">
+        边框线1 
+    </div>
+
+    <div class="paddingDiv">
+        padding
+    </div>
+
+    <div class="marginDiv">
+        margin 居中
+    </div>
+
+</body>
+</html>

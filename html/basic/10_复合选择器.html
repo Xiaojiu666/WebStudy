@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>复合选择器</title>
+    <link rel="stylesheet" href="../css/10_复合选择器.css" />
+    <style>
+      div.backgroud {
+        color: #b2d612;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>后代选择器</h1>
+    <p>后代选择器 div span</p>
+    <p>div里面所有的span 不论层级</p>
+    <div>
+      <span>
+        <p>
+          子集
+          <span> 孙子集 </span>
+        </p>
+      </span>
+    </div>
+
+    <h1>子代选择器</h1>
+    <p>后代选择器 div > span</p>
+    <p>子代选择器 div里面只有子</p>
+    <div>
+      <span
+        >子集
+        <span> 这样算孙子集 </span>
+      </span>
+    </div>
+
+    <h1>并集选择器</h1>
+    <p>写法 div , span , p</p>
+    <p>并集选择器 有其中一个 就会被渲染</p>
+    <div>div 标签</div>
+    <p>p标签</p>
+    <span> span标签</span>
+
+    <h1>交集选择器</h1>
+    <p>写法 div span p</p>
+    <p>交集选择器 同时满足多个条件 标签在前</p>
+    <div class="backgroud">满足条件的div 标签</div>
+    <div>div 标签</div>
+    <p class="backgroud">p 标签</p>
+  </body>
+</html>

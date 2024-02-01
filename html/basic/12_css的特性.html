@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-size: 18px;
+        }
+
+        div {
+            color: #cf1414;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        div {
+            color:aquamarine;
+        }
+
+        * {
+            color: #000 !important;
+        }
+    </style>
+</head>
+<body>
+    <H1>Css 继承性</H1>
+    <div>div 标签</div>
+    <p>p标签 如果子标签有父级的属性，就用自己的，没有的属性，用父级的</p>
+    <span> span标签</span>
+
+    <H1>Css  层叠性 </H1>
+    <p>有个相同的选择器 相同的覆盖 后覆盖前面的 不同的叠加</p>
+    <div>
+       Div 111111 
+    </div>
+    <div>
+        Div 222222 
+     </div>
+     <H1>Css  优先级 </H1>
+     <p> 通配符 小于 标签  类 id 行内 !important</p>
+     <p style="color: #cf1414;"> 选中的范围越大，优先级越低  !important 提高权重最大 </p>
+     <H3>Css  优先级 叠加 </H3>
+     <p> 复合选择器叠加时 需要叠加计算，通过个数计算</p>
+     <p> 行内样式，id个数，类个数，标签个数 </p>
+     <p> 继承最小，哪怕有important   </p>
+
+     <p class="name"></p>
+</html>  

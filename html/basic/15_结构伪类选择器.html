@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* <h1>结构伪类</h1> */
+      li:first-child {
+        background-color: green;
+      }
+
+      li:last-child {
+        background: pink;
+      }
+
+      /* li:nth-child(3){
+            background-color: red;
+        } */
+      /* li:nth-child(2n){
+            background-color: red;
+        } */
+      /* 5的倍数，5 10 15...显示 */
+      /* li:nth-child(5n){
+            background-color: red;
+        } */
+      /*5 以后的  ， x =  5, n = 0..x */
+      li:nth-child(n + 5) {
+        background-color: red;
+      }
+
+      /* <h1>伪元素选择器</h1> */
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+      div::after{
+        content: "之后";
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+
+      div::before{
+        /* 必须存在 */
+        content: "之前";
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>name</li>
+      <li>name</li>
+      <li>name</li>
+      <li>name</li>
+      <li>name</li>
+      <li>name</li>
+      <li>name</li>
+      <li>name</li>
+    </ul>
+
+    <h1>伪元素选择器</h1>
+    <p>创建虚拟元素 用CSS 创建标签 用来装饰性内容</p>
+    <div>这是一块代码</div>
+
+
+  </body>
+</html>

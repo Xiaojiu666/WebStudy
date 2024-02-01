@@ -1,0 +1,11 @@
+div span {
+    color: brown;
+}
+
+div > span {
+    color: rgb(91, 165, 42);
+} 
+
+div , span , p {
+   color: #321fd6;
+}
