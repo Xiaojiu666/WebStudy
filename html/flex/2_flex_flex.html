@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex 弹性布局</title>
+    <style>
+      .box {
+        display: flex;
+        align-items: stretch;
+        background-color: pink;
+        height: 300px;
+        border: 1px solid black;
+        /* 控制盒子主轴排列方式，有X变为Y轴 这样weight的排列顺序就变成垂直了 */
+        flex-direction: column;
+      }
+      .box div {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+      }
+      .box div:nth-child(1) {
+        width: 200px;
+        height: 200px;
+        flex: 1;
+        background-color: aqua;
+      }
+      .box div:nth-child(2) {
+        width: 200px;
+        height: 200px; 
+        /* 权重，类似于Android 的weight，将剩余空间通过权重比例进行布局 */
+        flex: 2;
+        background-color: red;
+      }
+      .box div:nth-child(3) {
+        width: 200px;
+        height: 200px;
+        flex: 3;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>你好1</div>
+      <div>你好2</div>
+      <div>你好3</div>
+    </div>
+</html>
