@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米产品区域</title>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        .produce{
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            background-color: rebeccapurple;
+        }
+        
+        .left {
+            width: 150px;
+            height: 400px;
+            background-color: brown;
+            float: left;
+        }
+        .right{
+            width: 400px;
+            height: 400px;
+            background-color: goldenrod;
+            float: right;
+        }
+        .right li {
+            float: left;
+            width: 80px;
+            height: 190px;
+            margin: 0px 10px 10px 0px;
+            background-color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="produce"> 
+    <!-- 浮动 顶对齐，行内变成行内块 -->
+    <div class="left"></div>
+    <div class="right">
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+
+    </div>
+    
+</body>
+</html>

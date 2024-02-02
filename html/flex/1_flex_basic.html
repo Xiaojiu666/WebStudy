@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex 弹性布局</title>
+    <style>
+      .box {
+        display: flex;
+        /* 控制盒子内容(X)轴对齐方式 */
+        /* space-between 左右两端对齐，平分 自动拉出间距 3 3 */
+        /* space-around  左右两端不对齐，每个item两边出现等间距环绕 3 5  */
+        /* space-evenly  左右两端不对齐 间距宽度相等 3 5 */
+        justify-content: space-evenly;
+        /* 控制盒子内容 测(Y)轴对齐方式 */
+        /* center  垂直居中*/
+        /* stretch 垂直拉伸 前提是item没有设置尺寸 */
+        align-items: stretch;
+        background-color: pink;
+        height: 300px;
+        border: 1px solid black;
+      }
+      .box div {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        /* margin-left: 10px; */
+      }
+      .box div:nth-child(2) {
+        /* 控制某个子盒子 测(Y)轴对齐方式 */
+        align-self: center;
+      }
+      .box .item {
+        display: flex;
+        /* 控制盒子内容排列方式 */
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="item">
+        <img src="../../images/dinosaur.jpg" alt="" />
+        <span class="title">这是一只小猫咪</span>
+      </div>
+      <div>你好</div>
+      <div>你好</div>
+    </div>
+  </body>
+</html>

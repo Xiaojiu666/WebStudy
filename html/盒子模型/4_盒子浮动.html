@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动-基本用法</title>
+    <style>
+        .one {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            float: left;
+        }
+        .two{
+            width: 200px;
+            height: 200px;
+            background-color: goldenrod;
+            /* 如果第一个盒子加，第二个不加，第二个会重叠在第一个下面，浮动脱标 因为第一个 不在下面的图层里 */
+            float: right;
+        }
+
+        .top{
+            width: 1000px;
+            height: 300px;
+            background: pink;
+        }
+
+        .bottom{
+            margin-top: 30px;
+            width: 1000px;
+            height: 300px;
+            background: black;
+        }
+        /*1、 需要添加额外块消除  */
+        .clearFloat {
+            clear: both;
+        }
+        /* 单伪元素法 */
+        .claerFix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 浮动 顶对齐，行内变成行内块 -->
+    <div class="claerFix">
+        <div class="one"></div>
+        <div class="two"></div>
+        <!-- 1、如果父容器，没有高度，父容器下面的布局就会上顶，需要添加额外块消除 -->
+        <!-- <div class="clearFloat"></div> -->
+    </div>
+
+
+
+    <h3>清除浮动</h3>
+    <P></P>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    
+</body>
+</html>
