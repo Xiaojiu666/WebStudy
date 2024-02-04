@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: pink;
+        border: 1px solid red;
+        text-align: center;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const originalArray = [99, 8, 1, 2, 4, 11, 120];
+      originalArray.forEach((element) => {
+        document.write(`
+            <span>${element}</span>
+          `);
+      });
+      let temp;
+      for (let index = 0; index < originalArray.length - 1; index++) {
+        for (let order = 0; order < originalArray.length - 1 - index; order++) {
+          if (originalArray[order] > originalArray[order + 1]) {
+            temp = originalArray[order];
+            originalArray[order] = originalArray[order + 1];
+            originalArray[order + 1] = temp;
+            console.log(
+              "temp : " +
+                temp +
+                " originalArray[order] " +
+                originalArray[order] +
+                " originalArray[order + 1 ] " +
+                originalArray[order + 1]
+            );
+          }
+        }
+         console.log("--------");
+      }
+      document.write(`
+           <br>
+          `);
+      originalArray.forEach((element) => {
+        document.write(`
+            <span>${element}</span>
+          `);
+      });
+    </script>
+  </body>
+</html>

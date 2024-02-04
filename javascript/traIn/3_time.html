@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        span {
+          display: inline-block;
+          box-sizing: border-box;
+          background-color: pink;
+          border: 1px solid red;
+          text-align: center;
+          padding: 5px;
+          margin: 5px;
+          border-radius: 10px;
+        }
+      </style>
+  </head>
+  <body>
+    <div id="time"></div>
+
+    <script>
+      function showTime() {
+        // 获取当前时间
+        let now = new Date();
+
+        // 格式化时间
+        let datetime = now.toLocaleString();
+
+        // 显示在页面上
+        document.getElementById("time").innerText = datetime;
+      }
+      setInterval(showTime, 1000);
+
+    </script>
+  </body>
+</html>
