@@ -1,0 +1,19 @@
+.wapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: green;
+}
+
+.header {
+    background-color: #fff;
+    display: flex;
+    height: 100px;
+}
+
+.header_logo {
+    width: 160px;
+    height: 100px;
+}

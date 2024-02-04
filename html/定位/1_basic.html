@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .relative {
+            position: relative;
+            /* 相对位置 相对空间本身 件位置 */
+            top: 0px;
+            left: 100px;
+        }
+        .important {
+            color: red;
+        }
+        
+        .news {
+            position: relative;
+            width: 400px;
+            height: 300px;
+        }
+        .news span{
+            background-color: gray;
+            display: block;
+            width: 100px;
+            height: 60px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+
+        .fixed{
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <p>灵活的改变盒子在网页中的位置</p>
+    <br>
+    <br>
+    <h3>相对位置</h3>
+    <P class="important">1.相对位置 相对空间本身 初始位置 </P>
+    <p class="important">2.不脱标 占位(移走后，下面的控件不会往上挤)</p>
+    <p class="important">3.标签的display 不会改变</p>
+    <div class="relative"><img src="../../images/dinosaur.jpg" alt=""></div>
+    <P>这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站这是阿旭的学习网站</P>
+    <br>
+    <br>
+    <h3>绝对定位 ：子级绝对定位，父级相对定位(子级无论怎么改变 都不会超出父级)</h3>
+    <P class="important">1.绝对位置 绝对父控件 初始位置  </P>
+    <p class="important">2.脱标 不占位(移走后，下面的控件会往上挤)</p>
+    <p class="important">4.标签的display 会改变</p>
+    <p class="important">3.参照物:父级，如果父级没有，参照父级的父级，(最外层浏览器)</p>
+    <div class="news">
+        <img src="../../images/dinosaur.jpg" alt="">
+        <span>阿旭的网页</span>
+        <h4>这是阿旭的网页</h4>
+    </div>
+    <br>
+    <br>
+    <h3>固定定位 ：固定某个位置</h3>
+    <P class="important">1 参照物 父控件</P>
+    <p class="important">2.脱标 不占位(移走后，下面的控件会往上挤)</p>
+    <p class="important">4.标签的display 会改变成行内块(宽高生效)</p>
+    <p class="important">3.参照物:父级，如果父级没有，参照父级的父级，(最外层浏览器)</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <div class="fixed">
+        <img src="./position.jpg" alt="">
+    </div>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+    <p>axu</p>
+
+</body>
+</html>

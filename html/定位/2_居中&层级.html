@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .dialog {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 400px;
+            background-color: blanchedalmond;
+            /* 50 % 是当前宽高的一半 */
+            transform: translate(-50%,-50%);
+        }
+
+        .boxA{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50px;
+            top: 50px;
+            /* 默认后者在上，加了z-index: 数字越大层级越上 */
+            z-index: 1;
+            background-color: pink;
+        }
+        .boxB{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="dialog">
+        
+    </div>
+
+    <div class="boxA">
+
+    </div>
+
+    <div class="boxB">
+
+    </div>
+
+
+    
+</body>
+</html>
