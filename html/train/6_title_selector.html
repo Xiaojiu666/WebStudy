@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        .title {
+            display: flex;
+            background-color: gray;
+        }
+
+        .title ol {
+             display: flex;
+            flex-direction: row;
+        }
+
+        .title li {
+            color: red;
+            padding: 5px;
+            margin: 2px;
+        }
+
+        .title li:hover {
+            color: yellow;
+            padding: 5px;
+            margin: 2px;
+            border-bottom: 3px solid black;
+        }
+
+        li::after {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <ol>
+            <li>首页</li>
+            <li>论坛</li>
+            <li>视频</li>
+            <li>音乐</li>
+        </ol>
+
+        <script>
+            const lis = document.querySelectorAll("li")
+            lis.forEach(element => {
+                element.style.color = "blue"
+            });
+
+        </script>
+
+    </div>
+</body>
+
+</html>

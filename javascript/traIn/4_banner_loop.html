@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .banner {
+            width: 1920px;
+            height: 1080px;
+            display: flex;
+            position: relative;
+            /* 让容器变为相对定位的父元素 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .banner_foot {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 15px;
+            right: 10px;
+            margin-bottom: 15px;
+            box-sizing: content-box;
+            z-index: 1;
+            align-items: end;
+        }
+
+        .banner_title {
+            color: white;
+            text-align: right;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        ol {
+            width: 150px;
+            display: flex;
+            left: 5px;
+            text-align: right;
+            flex-direction: row;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        .unSelector {
+            width: 20px;
+            /* 原点宽度 */
+            height: 20px;
+            /* 原点高度 */
+            background-color: gray;
+            /* 原点背景色 */
+            border-radius: 50%;
+            margin: 2px;
+            /* 原点圆角 */
+        }
+
+        .selector {
+            background-color: #fff;
+            border: 1PX solid blue;
+        }
+
+        .centered-image {
+            position: absolute;
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner_foot">
+
+            <div class="banner_title">风景宜人</div>
+
+            <ol class="dots">
+                <li class="unSelector"></li>
+                <li class="unSelector"></li>
+                <li class="unSelector"></li>
+                <li class="unSelector"></li>
+            </ol>
+        </div>
+
+
+        <img class="centered-image" src="../banner_iamge/1.jpg" alt="">
+
+
+    </div>
+
+    <script>
+        const bannerData = [
+            { url: "../banner_iamge/1.jpg", title: "风景宜人" },
+            { url: "../banner_iamge/2.jpg", title: "流浪地球1" },
+            { url: "../banner_iamge/3.jpg", title: "流浪地球2" },
+            { url: "../banner_iamge/4.jpg", title: "流浪地球3" },
+        ]
+        let current = 0
+
+        // 每隔1000毫秒（1秒）调用一次myFunction函数
+        var intervalId = setInterval(loop_image, 1000);
+
+        function loop_image() {
+            const banner_image = document.querySelector("img")
+            const dots = document.querySelectorAll("li")
+            for (let index = 0; index < dots.length; index++) {
+                if (current != index) {
+                    dots[index].className = `unSelector`
+                } else {
+                    dots[index].classList.add(`selector`)
+                }
+            }
+            const bannerInfo = bannerData[current]
+            banner_image.src = bannerInfo.url
+            let banner_title = document.querySelector(".banner_title")
+            banner_title.innerText = bannerInfo.title
+            if (current >= 3) {
+                current = 0
+            } else {
+                current = current + 1
+            }
+        }
+    </script>
+</body>
+
+</html>
