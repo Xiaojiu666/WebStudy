@@ -121,6 +121,7 @@
             }
             const bannerInfo = bannerData[current]
             banner_image.src = bannerInfo.url
+            // 一定不要用title，容易和上面产生冲突
             let banner_title = document.querySelector(".banner_title")
             banner_title.innerText = bannerInfo.title
             if (current >= 3) {
