@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top {
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 0px 20px;
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+        .tab {
+            background-color: aqua;
+        }
+
+        ol {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+
+        li {
+            padding: 20px;
+        }
+
+        p {
+            border-bottom: 3px white solid;
+        }
+
+        .content {
+            background-color: aqua;
+            padding: 0px 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: flex;
+            height: 800px;
+        }
+
+        .leftGoods {
+            width: 400px;
+            background-color: green;
+            height: 800px;
+        }
+
+        .rightGoods {
+            background-color: red;
+            height: 800px;
+            flex: 1;
+        }
+
+        li .active {
+            color: red;
+            border-bottom: 3px red solid;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="top">
+        <H2>每日特价</H2>
+
+        <ol class="tabSelector">
+            <li>
+                <p class="active">精选</p>
+            </li>
+            <li>
+                <p>美食</p>
+            </li>
+            <li>
+                <p>百货</p>
+            </li>
+            <li>
+                <p>个护</p>
+            </li>
+            <li>
+                <p>预告</p>
+            </li>
+        </ol>
+
+    </div>
+
+    <div class="content">
+        <div class="leftGoods">
+
+        </div>
+
+        <div class="rightGoods">
+
+        </div>
+    </div>
+
+    <script>
+        const tabSelector = document.querySelector(".tabSelector")
+        const rightGoods = document.querySelector(".rightGoods")
+        const tabs = document.querySelectorAll('li p')
+        console.log("tabs " + tabs.length)
+        for (let index = 0; index < tabs.length; index++) {
+            // 由于鼠标移动后,位置还需要被选中，所以不能用hover
+            tabs[index].addEventListener("mouseenter", function (e) {
+                console.log("tab " + this)
+                const active = document.querySelector(".active").classList.remove("active")
+                this.classList.add("active")
+                switch (this.textContent) {
+                    case "精选":
+                        rightGoods.style.backgroundColor = `rgb(255,255,0)`;
+                        break
+                    case "美食":
+                        rightGoods.style.backgroundColor = `rgb(99,99,99)`;
+                        break
+                    case "百货":
+                        rightGoods.style.backgroundColor = `rgb(11,11,11)`;
+                        break
+                    case "个护":
+                        rightGoods.style.backgroundColor = `rgb(22,22,22)`;
+                        break
+                    case "预告":
+                        rightGoods.style.backgroundColor = `rgb(88,88,33)`;
+                        break
+                    default:
+                        rightGoods.style.backgroundColor = `rgb(33,33,33)`;
+                        break
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

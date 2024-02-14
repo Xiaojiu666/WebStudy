@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 800px;
+            height: 400px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+        }
+
+        .redBg {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="event_name.jpg" alt="">
+
+    <P>元素对象.addEventListener("事件类型",函数)</P>
+
+    <div class="box">点我消失!!!!</div>
+
+    <div class="box">滑入变色!!!!</div>
+
+    <script>
+        const p = document.querySelector("p")
+        p.addEventListener("click", function () {
+            alert("click")
+        })
+
+        const box = document.querySelector(".box")
+        box.addEventListener("click", function () {
+            box.style.display = `none`
+        })
+        const boxs = document.querySelectorAll(".box")
+        boxs[1].addEventListener("mouseenter", function () {
+            console.log("red")
+            // element.style.backgroundColor = "red";
+            boxs[1].style.backgroundColor = `rgb(0,255,255)`
+        })
+        boxs[1].addEventListener("mouseleave", function () {
+            console.log("red")
+            // element.style.backgroundColor = "red";
+            boxs[1].style.backgroundColor = `rgb(255,0,0)`
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            height: 1000px;
+            margin: 0;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            transition: right 0.5s ease;
+            /* 定义动画效果 */
+        }
+
+        .slide-up {
+            transform: translateX(-30%);
+            /* 向上滑动的位置 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 这里是内容 -->
+    </div>
+
+    <script>
+        //获取元素可见区域宽高 不包含边框和margin
+        const container = document.querySelector(`.container`)
+        console.log("clientWidth" + container.clientWidth)
+        console.log("clientHeight" + container.clientHeight)
+
+        //如果父元素没有定位 offset 代表的是距离body容器的距离,
+
+        //如果父元素有定位 offset 代表的是距离 父容器的距离
+        //如果 有margin 50 那offsetLeft就是50
+        console.log("offsetLeft" + container.offsetLeft)
+        console.log("clientHeight" + container.offsetRight)
+        window.addEventListener("scroll", function () {
+            const top = document.documentElement.scrollTop
+            console.log("offsetTop" + top)
+            if (top >= 100) {
+                console.log("slide-up XXXXXXXXXX")
+                container.classList.toggle('slide-up');
+            }
+        })
+    </script>
+
+</body>
+
+</html>

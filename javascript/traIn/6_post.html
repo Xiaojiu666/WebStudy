@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发帖</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            /* 让body铺满整个视口高度 */
+            display: flex;
+            flex-direction: column;
+            /* 设置flex布局为纵向 */
+        }
+
+        .input_area {
+            display: none;
+            display: flex;
+            height: 100px;
+            width: 700px;
+            align-items: center;
+            /* 水平居中 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .list_area {
+            display: flex;
+            height: 100px;
+            width: 700px;
+            align-items: center;
+            /* 水平居中 */
+            margin-left: auto;
+            margin-right: auto;
+            flex: 1;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            border-radius: 50%;
+        }
+
+
+
+        textarea {
+            outline: none;
+            border-color: transparent;
+            resize: none;
+            background: #f5f5f5;
+            border-radius: 4px;
+            flex: 1;
+            padding: 10px;
+            margin: 20px;
+            transition: all 0.5s;
+            height: 30px;
+        }
+
+        textarea:focus {
+            border-color: #e4e4e4;
+            background: #fff;
+            height: 50px;
+        }
+
+        button {
+            width: 70px;
+            background-color: #00aeec;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 0px;
+            margin: 10px;
+        }
+
+        /* 评论区 */
+        ol {
+            list-style: none;
+            background-color: blueviolet;
+        }
+
+        .comment-item {
+            list-style: none;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .comment-item img {
+            float: left;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .comment-content {
+            margin-bottom: 10px;
+        }
+
+        .comment-time {
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="list_area">
+        <ol class="ol">
+
+        </ol>
+    </div>
+
+    <div class="input_area">
+        <img src="../../images/dinosaur.jpg" alt="">
+
+        <textarea name="textArea" class="textArea" id="tx" placeholder="请输入内容" maxlength="200" rows="2"></textarea>
+
+        <button class="button">发布</button>
+    </div>
+
+    <script>
+        const button = document.querySelector(".button")
+        const textArea = document.querySelector(".textArea")
+        const listArea = document.querySelector(".list_area")
+        const ol = document.querySelector(".ol")
+        button.addEventListener("click", function () {
+            if (textArea.value.trim()) {
+                const listItem = document.createElement("li")
+                listItem.className = 'comment-item';
+
+                // 创建头像
+                var avatar = document.createElement('img');
+                avatar.src = '../../images/dinosaur.jpg'; // 设置头像图片地址
+                avatar.alt = 'Avatar';
+
+                // 创建内容
+                var content = document.createElement('div');
+                content.className = 'comment-content';
+                content.textContent = textArea.value.trim();
+
+                // 创建时间
+                var time = document.createElement('div');
+                time.className = 'comment-time';
+                var currentTime = new Date();
+                time.textContent = currentTime.toLocaleString();
+
+                listItem.appendChild(avatar);
+                listItem.appendChild(content);
+                listItem.appendChild(time);
+
+                ol.appendChild(listItem)
+
+                textArea.value = '';
+
+
+            }
+        })
+
+        textArea.addEventListener("keyup", function (e) {
+            if (e.key === "Enter") {
+                listArea.style.display = `block`
+            }
+            console.log(`textarea` + textArea.value)
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            height: 1000px;
+            margin: 0;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 这里是内容 -->
+    </div>
+    <script>
+        const box = document.querySelector(".container")
+        window.addEventListener("scroll", function () {
+            const n = document.documentElement.scrollTop
+            console.log("transformX = " + n)
+            if (n >= 100) {
+                box.style.opacity = 1
+            } else {
+                box.style.opacity = 0
+            }
+        })
+    </script>
+
+</body>
+
+</html>
