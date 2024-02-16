@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 300px;
+            width: 1000px;
+            margin: auto;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .boxFruit {
+            background-color: greenyellow;
+        }
+
+        .boxBeverage {
+            background-color: blue;
+        }
+
+        .boxBread {
+            background-color: green;
+        }
+
+        .boxComputer {
+            background-color: red;
+        }
+
+        ol {
+            position: fixed;
+            right: 100px;
+            top: 100px;
+            list-style: none;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="boxFruit">
+            水果区
+        </div>
+        <div class="boxBeverage">
+            饮料区
+        </div>
+        <div class="boxBread">
+            面包区
+        </div>
+        <div class="boxComputer">
+            电脑区
+        </div>
+
+        <ol class="blockQucik">
+            <li data-postion="1">水果区</li>
+            <li data-postion="2">饮料区</li>
+            <li data-postion="3">面包区</li>
+            <li data-postion="4">电脑区</li>
+        </ol>
+
+        <script>
+            const blockQucik = document.querySelector(".blockQucik")
+
+            const boxFruit = document.querySelector(".boxFruit")
+            const boxBeverage = document.querySelector(".boxBeverage")
+            const boxBread = document.querySelector(".boxBread")
+            const boxComputer = document.querySelector(".boxComputer")
+
+            blockQucik.addEventListener("click", function (e) {
+                if (e.target.tagName === "LI") {
+                    const position = e.target.dataset.postion
+                    console.log("position " + position)
+                    switch (position) {
+                        case "1":
+                            window.scrollTo(0, boxFruit.offsetTop)
+                            break
+                        case "2":
+                            window.scrollTo(0, boxBeverage.offsetTop)
+                            break
+                        case "3":
+                            window.scrollTo(0, boxBread.offsetTop)
+                            break
+                        case "4":
+                            window.scrollTo(0, boxComputer.offsetTop)
+                            break
+
+                    }
+                }
+            })
+
+        </script>
+
+    </div>
+
+</body>
+
+</html>

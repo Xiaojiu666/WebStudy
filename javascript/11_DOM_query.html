@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        background-color: aqua;
+        width: 100px;
+        height: 100px;
+    }
+
+    .son {
+        background-color: red;
+        width: 50px;
+        height: 50px;
+    }
+
+    .brother {
+        background-color: green;
+        width: 50px;
+        height: 50px;
+    }
+</style>
+
+<body>
+
+    <div class="parent">
+        <div class="son"></div>
+        <div class="brother"></div>
+    </div>
+
+    <script>
+        const son = document.querySelector('.son')
+        son.addEventListener('click', function () {
+            // this.parentNode.style.display = `none`
+            //下一个元素节点
+            this.perviousElementSibling.style.backgroundColor = `red`
+            //上一个
+            this.nextElementSibling.style.backgroundColor = `red`
+        })
+        const parent = document.querySelector('.parent')
+        parent.addEventListener('click', function () {
+            this.children[0].style.display = `none`
+        })
+    </script>
+
+</body>
+
+</html>

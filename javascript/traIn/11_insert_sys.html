@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人信息录入系统</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .inputBox {
+            width: 800px;
+            height: 100px;
+            margin: auto;
+        }
+
+        .tableBox {
+            width: 800px;
+            height: 400px;
+            margin: auto;
+        }
+
+
+        .inputInfo {
+            width: 800px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        input {
+            margin: 5px;
+        }
+
+        h1 {
+            display: block;
+            text-align: center;
+        }
+
+        .name {
+            width: 50px;
+        }
+
+        .age {
+            width: 30px;
+        }
+
+        .sex {
+            width: 30px;
+        }
+
+        .money {
+            width: 40px;
+        }
+
+        .button {
+            padding: 2px 5px;
+            background-color: rgb(5, 135, 234);
+            color: azure;
+        }
+
+        table {
+            display: flex;
+            justify-content: space-around;
+            border-collapse: collapse;
+            /* 合并边框 */
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            /* 表头边框 */
+            padding: 5px 40px;
+            text-align: center;
+        }
+
+        th {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="inputBox">
+        <h1>个人信息录入</h1>
+        <div class="inputInfo">
+            <span>姓名 : </span>
+            <input type="text" name="你好" id="nh" class="name">
+            <span>年龄 : </span>
+            <input type="text" name="你好" id="nh" class="age">
+            <span>性别 : </span>
+            <input type="text" name="你好" id="nh" class="sex">
+            <span>薪资 : </span>
+            <input type="text" name="你好" id="nh" class="moeny">
+            <input type="button" value="录入" class="button">
+        </div>
+    </div>
+    <div class="tableBox">
+        <table>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>薪资</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>阿旭</td>
+                <td>18</td>
+                <td>男</td>
+                <td>10000</td>
+            </tr>
+        </table>
+        <script>
+            const button = document.querySelector(".button")
+            const table = document.querySelector("tbody")
+            button.addEventListener('click', function () {
+                const tr = document.createElement('tr')
+                const td = document.createElement('td')
+                td.innerText = "1"
+                const td1 = document.createElement('td')
+                td1.innerText = "阿旭"
+                const td2 = document.createElement('td')
+                td2.innerText = "18"
+                const td3 = document.createElement('td')
+                td3.innerText = "男"
+                const td4 = document.createElement('td')
+                td4.innerText = "10000"
+                tr.appendChild(td)
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tr.appendChild(td3)
+                tr.appendChild(td4)
+                table.appendChild(tr)
+            })
+        </script>
+    </div>
+</body>
+
+</html>

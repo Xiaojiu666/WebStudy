@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 创建元素
+        const div = document.createElement('div')
+        div.innerHTML = `第一块`
+        div.style.backgroundColor = 'red'
+        const div2 = document.createElement('div')
+        div2.innerHTML = `第二块`
+        div2.style.backgroundColor = 'green'
+        const div3 = document.createElement('div')
+        div3.innerHTML = `第三块`
+        // 向父元素最后位置添加一个div
+        document.body.appendChild(div)
+        //  向某个元素前面追加(要插入元素，再哪个元素前面)
+        document.body.insertBefore(div2, div)
+        //
+        const child = document.body.children[1]
+        console.log(child)
+        document.body.insertBefore(div3, child)
+
+        //true ,包含子节点
+        //false 不包含子节点
+        const clone1 = document.body.children[2].cloneNode(true)
+        console.log("clone1" + clone1)
+        document.body.appendChild(clone1)
+        //删除 父元素中的子元素 父子级关系
+        document.body.removeChild(div)
+    </script>
+</body>
+
+</html>

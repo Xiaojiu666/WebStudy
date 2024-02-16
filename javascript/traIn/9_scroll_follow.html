@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: auto;
+            transform: translateY(100px);
+            transition: transform 0.5s ease;
+            /* 定义动画效果 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        const container = document.querySelector(".container")
+        window.addEventListener("scroll", function () {
+            const scrollTop = document.documentElement.scrollTop
+            console.log("scrollTop " + scrollTop)
+            container.style.transform = 'translateY(' + scrollTop + 'px)';
+        })
+    </script>
+</body>
+
+</html>
