@@ -66,10 +66,12 @@
 
         table {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             border-collapse: collapse;
-            /* 合并边框 */
+            flex-direction: column;
+            align-items: center;
         }
+
 
         th,
         td {
@@ -89,57 +91,74 @@
 <body>
     <div class="inputBox">
         <h1>个人信息录入</h1>
-        <div class="inputInfo">
-            <span>姓名 : </span>
-            <input type="text" name="你好" id="nh" class="name">
-            <span>年龄 : </span>
-            <input type="text" name="你好" id="nh" class="age">
-            <span>性别 : </span>
-            <input type="text" name="你好" id="nh" class="sex">
-            <span>薪资 : </span>
-            <input type="text" name="你好" id="nh" class="moeny">
-            <input type="button" value="录入" class="button">
-        </div>
+        <form class="inputInfo">
+            姓名 :<input type="text" name="你好" id="nh" class="name">
+            年龄 :<input type="text" name="你好" id="nh" class="age">
+            性别 :<select class="gender">
+                <option value="man">男</option>
+                <option value="woman">女</option>
+            </select>
+            薪资 :<input type="text" name="你好" id="nh" class="salary">
+            <input type="submit" value="录入" class="button">
+        </form>
     </div>
     <div class="tableBox">
         <table>
-            <tr>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>年龄</th>
-                <th>性别</th>
-                <th>薪资</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>阿旭</td>
-                <td>18</td>
-                <td>男</td>
-                <td>10000</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>薪资</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
         </table>
         <script>
-            const button = document.querySelector(".button")
-            const table = document.querySelector("tbody")
-            button.addEventListener('click', function () {
-                const tr = document.createElement('tr')
-                const td = document.createElement('td')
-                td.innerText = "1"
-                const td1 = document.createElement('td')
-                td1.innerText = "阿旭"
-                const td2 = document.createElement('td')
-                td2.innerText = "18"
-                const td3 = document.createElement('td')
-                td3.innerText = "男"
-                const td4 = document.createElement('td')
-                td4.innerText = "10000"
-                tr.appendChild(td)
-                tr.appendChild(td1)
-                tr.appendChild(td2)
-                tr.appendChild(td3)
-                tr.appendChild(td4)
-                table.appendChild(tr)
+            const inputInfo = document.querySelector(".inputInfo")
+
+
+            const name = document.querySelector(".name")
+            const age = document.querySelector(".age")
+            const gender = document.querySelector(".gender")
+            const salary = document.querySelector(".salary")
+
+            const infoBeans = []
+
+            inputInfo.addEventListener('submit', function (e) {
+                //消除默认
+                e.preventDefault()
+                const info = {
+                    studentId: infoBeans.length + 1,
+                    name: name.value,
+                    age: age.value,
+                    gender: gender.value,
+                    salary: salary.value,
+                }
+                infoBeans.push(info)
+                this.reset()
+                render()
             })
+
+            function render() {
+                const table = document.querySelector("tbody")
+                table.innerHTML = ``
+                for (let index = 0; index < infoBeans.length; index++) {
+                    const element = infoBeans[index];
+                    const tr = document.createElement('tr')
+                    tr.innerHTML = `
+                    <td>${element.studentId}</td>
+                    <td>${element.name}</td>
+                    <td>${element.age}</td>
+                    <td>${element.gender}</td>
+                    <td>${element.salary}</td>
+                    `
+                    table.append(tr)
+                }
+            }
         </script>
     </div>
 </body>
